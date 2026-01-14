@@ -16,6 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Include="src\App.xaml.cs" />
     <Compile Include="src\SimpleMainWindow.xaml.cs" />
   </ItemGroup>
