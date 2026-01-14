@@ -12,20 +12,16 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
-    - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v2
-    
-    - name: Setup NuGet
-      uses: NuGet/setup-nuget@v2
-    
-    - name: Restore NuGet packages
-      run: nuget restore BaiakZikaLauncher.sln
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
     
     - name: Build
-      run: msbuild BaiakZikaLauncher.sln /p:Configuration=Release /p:Platform="Any CPU"
+      run: dotnet publish BaiakZikaLauncher.csproj -c Release -r win-x64 --self-contained false -o ./publish
     
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
         name: Baiak-Zika-Launcher
-        path: bin/Release/*.exe
+        path: ./publish/
