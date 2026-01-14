@@ -7,6 +7,8 @@
     <ApplicationIcon>icon.ico</ApplicationIcon>
     <AssemblyName>BaiakZikaLauncher</AssemblyName>
     <RootNamespace>BaiakZikaLauncher</RootNamespace>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <EnableDefaultPageItems>false</EnableDefaultPageItems>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Include="src\App.xaml" />
+    <ApplicationDefinition Include="src\App.xaml" />
     <Page Include="src\SimpleMainWindow.xaml" />
   </ItemGroup>
 
